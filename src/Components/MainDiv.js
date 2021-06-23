@@ -9,7 +9,7 @@ import HomePage from "./HomePage"
 import MyGear from "./My_Gear_Page/MyGear"
 import FindPartner from "./Find_Partner_Page/FindPartner"
 
-export default function MainDiv() {
+export default function MainDiv(props) {
     return (
         <div className="main-div">
             <Router>
@@ -27,7 +27,12 @@ export default function MainDiv() {
                         <HomePage />
                     </Route>
                     <Route exact path="/mygear">
-                        <MyGear />
+                        <MyGear 
+                            userGear={props.userGear}
+                            addUserGear={props.addUserGear} 
+                            removeUserGear={props.removeUserGear}
+                            gears={props.gears}
+                        />
                     </Route>
                     <Route exact path="/findpartner">
                         <FindPartner />
