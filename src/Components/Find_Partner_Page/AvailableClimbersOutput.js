@@ -1,4 +1,5 @@
 import React from 'react'
+import AvailableClimberCard from "./AvailableClimberCard"
 
 export default function AvailableClimbersOutput() {
     return (

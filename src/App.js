@@ -8,7 +8,9 @@ export default class App extends Component {
     climbers: [],
     areas: [],
     gears: [],
-    userGear: []
+    userGear: [],
+    selectedArea: "",
+    availableClimbers: []
   }
 
   componentDidMount() {
@@ -51,7 +53,37 @@ export default class App extends Component {
     })
   }
 
+  updateSelectedArea = (areaSelected) => {
+    this.setState({
+      selectedArea: areaSelected
+    })
+  }
+
+  updateAvailableClimbers = (areaSelected) => {
+    const areaGear = areaSelected.gears.map(gear => {
+      return gear.name})
+    const userGear = this.state.userGear
+    //This is gear that the user needs a partner to have
+    const gearNeededbyAvailableClimber = areaGear.filter((gear) => !userGear.includes(gear));
+    const climbers = this.state.climbers
+  
+
+
+    const climbersWithGearNeeded = climbers.filter(climber => {
+      const climberGear = climber.gears.map(gear => {
+        return gear.name})
+      const gearNeededbyUser = areaGear.filter((gear) => !climberGear.includes(gear))
+      if (gearNeededbyUser.length === 0) {
+        return climber
+      } 
+    })
+    this.setState({
+      availableClimbers: [...climbersWithGearNeeded]
+    })
+  }
+    
   render() {
+    console.log(this.state.availableClimbers)
     return (
       <div className="app">
         <h1>App Div</h1>
@@ -61,8 +93,12 @@ export default class App extends Component {
           gears={this.state.gears}
           userGear={this.state.userGear}
           addUserGear={this.addUserGear}
-          removeUserGear={this.removeUserGear}/>
-        <Footer/>
+          removeUserGear={this.removeUserGear}
+          updateSelectedArea={this.updateSelectedArea}
+          selectedArea={this.state.selectedArea}
+          updateAvailableClimbers={this.updateAvailableClimbers}
+          />
+        {/* <Footer/> */}
       </div>
     )
   }

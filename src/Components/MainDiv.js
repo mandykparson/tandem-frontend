@@ -35,7 +35,13 @@ export default function MainDiv(props) {
                         />
                     </Route>
                     <Route exact path="/findpartner">
-                        <FindPartner />
+                        <FindPartner 
+                            selectedArea={props.selectedArea}
+                            updateSelectedArea={props.updateSelectedArea}
+                            climbers={props.climbers}
+                            userGear={props.userGear}
+                            areas={props.areas}
+                            updateAvailableClimbers={props.updateAvailableClimbers}/>
                     </Route>
                 </Switch>
             </div>
