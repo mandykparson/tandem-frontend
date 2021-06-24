@@ -13,7 +13,7 @@ export default function AvailableGear(props) {
 
     return (
         <div className="my-gear-sub">
-            <h2>Available Gear</h2>
+            <h2>Select Your Gear</h2>
             {renderGearButtons()}
         </div>
     )

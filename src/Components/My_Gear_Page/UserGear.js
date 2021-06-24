@@ -13,8 +13,9 @@ export default function UserGear(props) {
     }
     return (
         <div className="my-gear-sub">
-            <h2>User Gear</h2>
+            <h2>My Gear</h2>
             {renderGearButtons()}
+
         </div>
     )
 }

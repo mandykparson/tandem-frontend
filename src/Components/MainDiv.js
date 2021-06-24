@@ -15,11 +15,11 @@ export default function MainDiv(props) {
             <Router>
             <div className="header">
                 <h1>Tandem</h1>
-                    <nav className="nav-bar">
-                        <Link to="/">HOME </Link>| 
-                        <Link to="/mygear"> My Gear </Link>| 
-                        <Link to="/findpartner">Find Partner</Link>
-                    </nav>
+                <nav className="nav-bar">
+                    <Link to="/">Home </Link>| 
+                    <Link to="/mygear"> My Gear </Link>| 
+                    <Link to="/findpartner"> Find Partner</Link>
+                </nav>
             </div>
             <div className="main-content">
                 <Switch>
@@ -41,7 +41,8 @@ export default function MainDiv(props) {
                             climbers={props.climbers}
                             userGear={props.userGear}
                             areas={props.areas}
-                            updateAvailableClimbers={props.updateAvailableClimbers}/>
+                            updateAvailableClimbers={props.updateAvailableClimbers}
+                            availableClimbers={props.availableClimbers}/>
                     </Route>
                 </Switch>
             </div>

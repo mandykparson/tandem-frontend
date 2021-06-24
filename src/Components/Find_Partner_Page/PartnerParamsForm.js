@@ -8,7 +8,7 @@ export default function PartnerParamsForm(props) {
         })
     }
     const renderAreaGear = () => {
-        if (props.selectedArea.length === 0) {
+        if (props.selectedArea === "default") {
             return "No Area Selected"
         } else {
         return props.selectedArea.gears.map(gear => {
@@ -31,19 +31,28 @@ export default function PartnerParamsForm(props) {
     }
 
     return (
-        <div className="partner-params-sub">
-            <h2>Select an Area</h2>
-            <div className="dropdown">
-                <button class="dropbtn">Areas</button>
-                    <div onChange={ handleClick }class="dropdown-content">
-                        { createDropdownAreaOptions() }
+        <div className="partner-params-sub" id="sub-one">
+            <div className="select-an-area-container">
+                <div className="column-one">
+                    <h2>Select an Area</h2>
+                    <div className="dropdown">
+                        <button class="dropbtn">Areas</button>
+                            <div onChange={ handleClick }class="dropdown-content">
+                                { createDropdownAreaOptions() }
+                        </div>
+                    </div>
                 </div>
+                <div className="column-two"></div>
             </div>
             <div className="sub-headings">
-                <h2>Your Gear</h2>
-                {renderUserGear()}
-                <h2>Required Area Gear</h2>
-                {renderAreaGear()}
+                <div className="column-one">
+                    <h2>Your Gear</h2>
+                        {renderUserGear()}
+                </div>
+                <div className="column-two">
+                    <h2>Required Area Gear</h2>
+                        {renderAreaGear()}
+                </div>
                 
             </div>
             

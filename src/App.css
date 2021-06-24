@@ -1,67 +1,215 @@
-.app {
-  background-color: aqua;
+:root {
+  --main-color: #F2CBBD;
+  --hover-color: #733934;
+  --body-color: #A65A49;
+  --box-color: #BF785E;
+  --callout-color: #6092A6;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  background-color: white;
+  height: 100%;
+}
+
+.page-wrap{
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+
+.page-wrap{
+  content: "";
+  display: block;
+}
+
+.footer, .page-wrap:after{
+  height: 60px;
+}
+
+h1, h2{
+  font-family: 'Prompt', sans-serif;
+  color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 20px;
 }
 
 .header {
-  background-color: blue;
+  background-color: var(--hover-color);
   display:flex;
   justify-content: space-between;
   padding-left: 1rem;
   padding-right: 1rem;
 }
+nav {
+  align-self: center;
+  color: var(--main-color);
+  font-size: 20px;
+}
+
+a:hover{
+  color:var(--callout-color)
+}
 
 .footer{
-  background-color: blueviolet;
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:60px;
+  display:flex;
+  background-color: var(--body-color);
+  justify-content: center;
+}
+.footer p {
+  align-self: center;
 }
 
 .my-gear{
-  background-color: chartreuse;
-  height: 400px;
+  height: 760px;
   display: flex;
   justify-content: space-around;
 }
 
-.find-partner{
-  background-color:chocolate;
-  height: 400px;
+.my-gear-sub {
+  height: 300px;
+  width: 40%;
+  margin-top: 2rem;
+  
+}
+
+.gear-button {
+  background-color: var(--callout-color);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 30px;
 }
 
 .home-page{
-  background-color:cornflowerblue;
-  height: 400px;
+  height: 760px;
+  color: black;
+}
+.home-page img{
+  width: 100%;
+  height: 300px;
+  object-fit:cover; 
+}
+
+.home-page h2 {
+  color: var(--callout-color);
+  font-size: 40px;
+}
+
+.home-page h4 {
+  font-size: 20px;
+  font-style:italic;
+
+}
+.intro-box {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .partner-params {
-  background-color: cornsilk;
   display: flex;
   justify-content: space-around;
 }
 
 .partner-params-sub {
-  background-color:crimson;
-  width: 40%;
+  height: 600px;
+}
+
+#sub-one {
+  width: 55%;
+  min-width: 400px;
+  padding-left: 2rem;
+  padding-right: 4rem;
+  padding: 2rem;
+}
+
+.select-an-area-container {
+  display: flex;
+  justify-content: space-between;
+}
+#sub-two {
+  width: 45%;
+  background-color: rgb(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.find-partner h2{
+  color: var(--callout-color);
+}
+
+.sub-headings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.render-area-card {
+  width: 100%;
+  height: auto;
+}
+
+.render-area-card img {
+  width: 90%;
   height: 300px;
+  object-fit: cover;
+}
+
+.render-area-card a {
+  color: black;
+}
+.render-area-card a:hover {
+  color: var(--hover-color);
 }
 
 .available-climbers-output {
-  background-color: darkgreen;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-bottom: 4rem;
 }
 
-.my-gear-sub {
-  background-color: gold;
+.climber-card-output-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.available-climbers-output-heading {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.available-climber-card {
+  width: 33%;
+  margin: 2rem;
+  height: 550px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.8)
+}
+
+.available-climber-card img {
+  width: 100%;
   height: 300px;
-  width: 40%;
+  object-fit: cover;
+}
+
+.available-climber-card div {
+  padding-left: 1rem;
 }
 
 .dropbtn{
-  background-color: white;
+  background-color: var(--box-color);
   border: none;
-  color: black;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -89,18 +237,17 @@
   text-decoration: none;
   display: block;
 }
-.dropdown-content p:hover {background-color: black;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: white}
-
-.render-area-card {
-  width: 50%;
-  height: auto;
+.dropdown-content p:hover {
+  background-color: black;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: var(--callout-color);
 }
 
-.render-area-card img {
-  width: 100%;
-  height: auto;
-}
+
+
 
 
