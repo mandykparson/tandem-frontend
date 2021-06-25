@@ -13,6 +13,7 @@ export default function MyGear(props) {
                 userGear={props.userGear} 
                 removeUserGear={props.removeUserGear}
             />
+            
         </div>
     )
 }
